@@ -1,0 +1,111 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #eef2f7;
+}
+
+.contenedor {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.formulario {
+    width: 450px;
+    background: white;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.titulo {
+    text-align: center;
+    color: #1f2937;
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+.campo {
+    margin-bottom: 20px;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 8px;
+    color: #374151;
+    font-weight: bold;
+}
+
+.campo input,
+.campo select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 15px;
+    background: #f9fafb;
+}
+
+.campo input:focus,
+.campo select:focus {
+    outline: none;
+    border-color: #2563eb;
+    background: white;
+}
+
+.btn-registrar {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.btn-registrar:hover {
+    background: #1d4ed8;
+}
+
+.listado {
+    width: 95%;
+    max-width: 1200px;
+}
+
+.tabla-activos {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.tabla-activos th {
+    background: #2563eb;
+    color: white;
+    padding: 12px;
+    text-align: left;
+}
+
+.tabla-activos td {
+    padding: 12px;
+    border-bottom: 1px solid #e5e7eb;
+    color: #374151;
+}
+
+.tabla-activos tr:hover {
+    background: #f3f4f6;
+}
+
+.tabla-activos th:first-child,
+.tabla-activos td:first-child {
+    text-align: center;
+}

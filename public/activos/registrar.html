@@ -1,0 +1,60 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Activo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="contenedor">
+        <div class="formulario">
+
+            <h2 class="titulo">Registro de Activo</h2>
+
+            <form action="#" method="POST" enctype="multipart/form-data">
+
+                <div class="campo">
+                    <label for="idcategoria">Categoría:</label>
+                    <input type="number" id="idcategoria" name="idcategoria" required>
+                </div>
+
+                <div class="campo">
+                    <label for="descripcion">Descripción:</label>
+                    <input type="text" id="descripcion" name="descripcion" maxlength="150" required>
+                </div>
+
+                <div class="campo">
+                    <label for="fotografia">Fotografía:</label>
+                    <input type="file" id="fotografia" name="fotografia">
+                </div>
+
+                <div class="campo">
+                    <label for="estado">Estado:</label>
+                    <select id="estado" name="estado">
+                        <option value="Disponible">Disponible</option>
+                        <option value="No disponible">No disponible</option>
+                        <option value="Mantenimiento">Mantenimiento</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="precio">Precio:</label>
+                    <input type="number" id="precio" name="precio" step="0.01" required>
+                </div>
+
+                <button type="submit" class="btn-registrar">
+                    Registrar Activo
+                </button>
+
+            </form>
+
+        </div>
+    </div>
+
+</body>
+</html>
+```

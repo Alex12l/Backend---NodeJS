@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,10 +8,14 @@
 </head>
 
 <body>
+
     <div class="contenedor">
         <div class="formulario listado">
+
             <h2 class="titulo">Listado de Activos</h2>
+
             <table class="tabla-activos">
+
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -21,41 +24,51 @@
                         <th>Fotografía</th>
                         <th>Estado</th>
                         <th>Precio</th>
-                        <th>Fecha de Registro</th>
+                        <th>Fecha Registro</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>Laptop Lenovo</td>
-                        <td>laptop.jpg</td>
-                        <td>Disponible</td>
-                        <td>S/ 2500.00</td>
-                        <td>03/10/2026</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>2</td>
-                        <td>Monitor Samsung</td>
-                        <td>monitor.jpg</td>
-                        <td>Disponible</td>
-                        <td>S/ 850.00</td>
-                        <td>03/10/2026</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>1</td>
-                        <td>Computadora de escritorio</td>
-                        <td>pc.jpg</td>
-                        <td>Mantenimiento</td>
-                        <td>S/ 1800.00</td>
-                        <td>03/10/2026</td>
-                    </tr>
+
+                <tbody id="tablaActivos">
                 </tbody>
+
             </table>
+
         </div>
     </div>
-</body>
 
+
+    <script>
+
+        fetch('/api/activos')
+            .then(response => response.json())
+            .then(resultado => {
+
+                const tabla = document.getElementById('tablaActivos');
+
+                resultado.data.forEach(activo => {
+
+                    const fila = document.createElement('tr');
+
+                    fila.innerHTML = `
+                        <td>${activo.id}</td>
+                        <td>${activo.idcategoria}</td>
+                        <td>${activo.descripcion}</td>
+                        <td>${activo.fotografia}</td>
+                        <td>${activo.estado}</td>
+                        <td>S/ ${activo.precio}</td>
+                        <td>${activo.fecharegistro}</td>
+                    `;
+
+                    tabla.appendChild(fila);
+
+                });
+
+            })
+            .catch(error => {
+                console.error('Error al obtener los activos:', error);
+            });
+
+    </script>
+
+</body>
 </html>
